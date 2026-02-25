@@ -3,30 +3,29 @@ const client = new Discord.Client({ checkUpdate: false });
 const express = require('express');
 const app = express();
 
-// إعداد سيرفر Express لضمان بقاء السكربت شغال 24/7 على Render
+// سيرفر صغير لضمان بقاء السكربت شغال على ريندر
 app.get('/', (req, res) => {
-  res.send('Account is Online 24/7 with the new Retrowave Presence!');
+  res.send('Presence is Active 24/7!');
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log('Express server is running on port 3000');
+  console.log('Server is running...');
 });
 
 client.on('ready', async () => {
   console.log(`SUCCESS: Logged in as ${client.user.tag}`);
 
-  // إعداد الـ Rich Presence بالمعلومات والصورة الجديدة
   const r = new Discord.RichPresence()
-    .setApplicationId('1476320950323642478') // ID التطبيق الخاص بك
+    .setApplicationId('1476320950323642478') // معرف التطبيق
     .setType('PLAYING') 
-    .setName('saif ₉₁') 
+    .setName('ˢᵃᶤᶠ  ₉₁') 
     .setDetails('ME...') 
     .setState('Watching ˢᵃᶤᶠ ₉₁') 
-    .setStartTimestamp(Date.now()) // لبدء عداد الوقت من لحظة التشغيل
-    .setAssetsLargeImage('sports-car-mountains-retrowave-synthwave-4k-wallpaper-uhdpaper_com-233_0_k') // الكي الجديد للصورة
+    .setStartTimestamp(Date.now()) 
+    .setAssetsLargeImage('car') // الاسم الجديد الذي وضعته في الموقع
     .setAssetsLargeText('saif ₉₁')
-    .addButton('ME ?', 'https://discordapp.com/users/731595761988403280') // رابط حسابك
-    .addButton('server', 'https://discord.gg/hVNV73CE'); // رابط السيرفر
+    .addButton('ME ?', 'https://linktr.ee/povce') // رابطك
+    .addButton('server', 'https://discord.gg/3HzTN5rv'); // رابط سيرفرك
 
   client.user.setActivity(r);
   client.user.setPresence({ status: 'online' });
