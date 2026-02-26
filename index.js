@@ -9,8 +9,7 @@ app.listen(process.env.PORT || 3000);
 client.on('ready', async () => {
   console.log(`✅ SUCCESS: Logged in as ${client.user.tag}`);
   
-  const sixtyHoursAgo = Date.now() - (60 * 60 * 60 * 1000);
-  
+const hoursAgo = Date.now() - (139 * 60 * 60 * 1000);  
   const r = new Discord.RichPresence()
     .setApplicationId('1476320950323642478')
     .setType('PLAYING')
