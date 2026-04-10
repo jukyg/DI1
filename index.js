@@ -10,12 +10,11 @@ client.on('ready', async () => {
   console.log(`✅ SUCCESS: Logged in as ${client.user.tag}`);
   
   // 139 ساعة للخلف
-  const hoursAgo = Date.now() - (139 * 60 * 60 * 1000);
-
+const hoursAgo = Date.now() - (600 * 60 * 60 * 1000);   
   const r = new Discord.RichPresence()
     .setApplicationId('1476320950323642478')
-    .setType('PLAYING')
-    .setName('saif ₉₁')
+    .setType('WATCHING')
+    .setName('ˢᵃᶤᶠ ₉₁')
     .setDetails('ME... ')
     .setState('Watching ˢᵃᶤᶠ ₉₁')
     .setStartTimestamp(hoursAgo) // ✅ تم التصحيح
